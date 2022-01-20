@@ -1,5 +1,5 @@
 #include <iostream>
-#include "test_ColorCoder.h"
+#include "testColorCoder.h"
 
 int main() {
     testNumberToPair(4, TelCoColorCoder::WHITE, TelCoColorCoder::BROWN);
