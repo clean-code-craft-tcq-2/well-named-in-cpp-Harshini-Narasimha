@@ -1,5 +1,7 @@
 #include <iostream>
-#include "colorCoderTypes.h"
+#include "ColorCoderManual.h"
+
+#define MAXIMUM_PAIR_NUMBER 25
 
 namespace TelCoColorCoder
 {
@@ -14,16 +16,14 @@ namespace TelCoColorCoder
         return major * numberOfMinorColors + minor + 1;
     }
 
-    void printColorCoderManual()
+    void printColorCoderManual(colorCoderManualInterface &colorCoderManualObject)
     {
          std::cout<<"PairNo\tMajorColor\tMinorColor\n";
-         for(int majorColorIterator=0; majorColorIterator<numberOfMajorColors; majorColorIterator++)
+         for(int pairNumberIterator=1; pairNumberIterator<=MAXIMUM_PAIR_NUMBER; pairNumberIterator++)
          {
-             for(int minorColorIterator=0; minorColorIterator<numberOfMinorColors; minorColorIterator++)
-             {
-                 std::cout<<GetPairNumberFromColor((MajorColor)majorColorIterator, (MinorColor)minorColorIterator)<<"\t\t\t"<<MajorColorNames[majorColorIterator]<<"\t\t\t"<<MinorColorNames[minorColorIterator]<<"\n";
-              }
-          }           
+             ColorPair colorPair=GetColorFromPairNumber(pairNumberIterator);
+             std::string textTodisplay=colorCoderManualObject.colorCoderPairDisplayFormatter(pairNumberIterator,colorPair);
+             colorCoderManualObject.printDataOnconsole(textTodisplay);
+         }           
     }
-
 }
