@@ -27,6 +27,7 @@ class mockColorCoderManual: public colorCoderManualInterface
 {
   public:
        int printCounter=0, formatCounter=0;
+
        void printDataOnconsole(std::string /*text*/)
        {
          printCounter++;
