@@ -21,3 +21,11 @@ void testPairToNumber(
     std::cout << "Got pair number " << pairNumber << std::endl;
     assert(pairNumber == expectedPairNumber);
 }
+
+void testColorCoderManualPrinter()
+{
+    mockColorCoderManual mockColorCoderObject;
+    TelCoColorCoder::printColorCoderManual(mockColorCoderObject);
+    assert(mockColorCoderObject.printCounter == 25);
+    assert(mockColorCoderObject.formatCounter == 25);
+}
